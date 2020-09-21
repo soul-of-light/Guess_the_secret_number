@@ -1,8 +1,15 @@
-secret = int("9")
+import random
 
-guess = int(input("What is the secret number between 1 and 10? "))
 
-if guess == secret:
-    print("Congratulations, you've guessed it right!")
-else:
-    print("Sorry, but that's not correct.")
+secret = random.randint(1, 30)
+
+while True:
+    guess = int(input("Guess the secret number (between 1 and 30): "))
+
+    if guess == secret:
+        print("You've guessed it - congratulations! It's number " + str(secret))
+        break
+    elif guess > secret:
+        print("Your guess is not correct... try something smaller")
+    elif guess < secret:
+        print("Your guess is not correct... try something bigger")
